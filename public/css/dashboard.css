@@ -1,0 +1,9 @@
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions a {
+    text-decoration: none;
+    color: black;
+}
