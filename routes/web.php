@@ -23,10 +23,10 @@ Route::get('/', function () {
     return view('index'); 
 });
 
-Route::get('/vote', [VoteController::class, 'index']);
-Route::post('/vote/confirm', [VoteController::class, 'confirm']);
+Route::get('/vote', [VoteController::class, 'index'])->name('vote');
+Route::post('/vote/confirm', [VoteController::class, 'confirm'])->name('vote.confirm');
 Route::post('/vote/record', [VoteController::class, 'record']);
-Route::get('/vote/{studentid}', [VoteController::class, 'vote']);
+Route::get('/vote/{studentid}', [VoteController::class, 'vote'])->name('vote.page');
 
 Route::get('/students', [StudentController::class, 'index'])->name('students.list');
 Route::get('/students/add', [StudentController::class, 'addForm'])->name('students.add');

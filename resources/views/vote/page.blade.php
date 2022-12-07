@@ -3,12 +3,13 @@
 @section('content')
     <form method="POST" action="/vote/record">
         @csrf
+        <input type="hidden" name="studentid" value="{{$studentid}}">
         @foreach($positions as $position)
         <div class="section" data-limit="{{$position['validvote']}}">
             <h1>{{$position['position']}}</h1> 
                 @foreach(array_filter($candidates, fn($candidate) => $position['positionindex'] == $candidate['positionindex']) as $candidate)
                     <div class="form-group">
-                        <input type="checkbox" onClick="return checkLimit('{{str_replace(' ', '_', $position['position'])}}')" name="{{$position['position']}}[]" class="{{str_replace(' ', '_', $position['position'])}}" value="{{$candidate['candidateid']}}" id="{{$candidate['candidateid']}}">
+                        <input type="checkbox" onClick="return checkLimit('{{str_replace(' ', '_', $position['position'])}}')" name="{{$position['positionindex']}}[]" class="{{str_replace(' ', '_', $position['position'])}}" value="{{$candidate['candidateid']}}" id="{{$candidate['candidateid']}}">
                         <label for="{{$candidate['candidateid']}}">{{$candidate['candidatename']}}</label>
                     </div>
                 @endforeach
