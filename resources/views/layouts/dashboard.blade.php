@@ -11,6 +11,8 @@
 </head>
 <body>
     <div class="container">
+        <a class="btn" href="/"><h1 class="title">Home</h1></a>
+
         <x-navbar />
         <div class="content">
 
