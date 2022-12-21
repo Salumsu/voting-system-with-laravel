@@ -15,4 +15,15 @@
 <h2>Installation Guide</h2>
 <h3>Step 1: Get the project on your computer</h3>
     <p>This can be done by cloning the project using git or by simply clicking <br/>
-    the clicking "<> Code" -> "Download Zip"</p>
+    the clicking "<> Code" -> "Download Zip"</p>.
+<h3>Step 2: Set up the database </h3>
+    <p>There's some step that you need to follow to set up the database in your computer. These steps are: </p>
+    <ol>
+    <li>Open xampp</li>
+    <li>Start MySQL</li>
+    <li>Start Apache</li>
+    <li>Go to phpmyadmin by: open a browser -> search "localhost/phpmyadmin"</li>
+    <li>Create a new database named "vote"</li>
+    <li>Click the new database and go to the import tab</li>
+    <li>Click choose file then navigate the file inside this project directory named "vote.sql"</li>
+    </ol>
