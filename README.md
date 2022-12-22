@@ -36,7 +36,6 @@
     <li>In the same terminal, run php artisan key:generate</li>
     <li>Copy the .env.example found in the root directory of this project and name it ".env"</li>
     <li>Open .env file and change the database name (DB_DATABASE) to vote, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.</li>
-    
     </ol>
 
 <h2>Use Guide</h2>
