@@ -17,8 +17,16 @@ class StudentController extends Controller
     }
 
     public function add(Request $request) {
+        $studentid = $request->input('studentid');
+
+        $exists = StudentModel::find($studentid);
+
+        if ($exists) {
+            return redirect('/students/add')->with('error', "Student ID already exists");
+        } 
+
         $newStudent = new StudentModel;
-        $newStudent->studentid = $request->input('studentid');
+        $newStudent->studentid = $studentid;
         $newStudent->firstname = $request->input('firstname');
         $newStudent->middlename = $request->input('middlename');
         $newStudent->lastname = $request->input('lastname');
@@ -26,7 +34,7 @@ class StudentController extends Controller
         $newStudent->yearlevel = $request->input('yearlevel');
         $newStudent->voterskey = time();
         $newStudent->save(); 
-        return redirect('/students/add');   
+        return redirect('/students/add')->with('success', 'Student added successfully');   
     }
 
     public function updateForm($studentid) {
@@ -42,13 +50,13 @@ class StudentController extends Controller
         $student->program = $request->input('program');
         $student->yearlevel = $request->input('yearlevel');
         $student->save();
-        return redirect('/students');
+        return redirect('/students')->with('success', 'Student updated successfully');
     }
 
     public function delete($studentid) {
         $student = StudentModel::where('studentid', $studentid)->first();
         $student->active = 0;
         $student->save();
-        return redirect('/students');
+        return redirect('/students')->with('success', 'Student deleted successfully');
     }
 }

@@ -57,6 +57,6 @@ class VoteController extends Controller
         $voter = StudentModel::where('studentid', $request->input('studentid'))->first();
         $voter->votestatus = 1;
         $voter->save();
-        return redirect('vote');
+        return redirect('vote')->with('success', 'Voted successfully');
     }
 }

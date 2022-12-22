@@ -14,11 +14,9 @@
         <a class="btn" href="/"><h1 class="title">Home</h1></a>
 
         <x-navbar />
+        @include('flash')
         <div class="content">
-
-
                 @yield('content')
-
         </div>
     </div>
 

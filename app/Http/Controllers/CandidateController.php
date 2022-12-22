@@ -43,7 +43,7 @@ class CandidateController extends Controller
         $candidate->yearlevel = $request->input('yearlevel');
         $candidate->save();
 
-        return redirect('/candidates');
+        return redirect('/candidates')->with('success', 'Candidate added successfully');;
     }
 
     public function updateForm(Request $request, $candidateid) {
@@ -59,11 +59,11 @@ class CandidateController extends Controller
         $candidate->positionindex = $position[0];
         $candidate->position = substr($position, 2);
         $candidate->save();
-        return redirect('/candidates');
+        return redirect('/candidates')->with('success', 'Candidate updated successfully');;
     }
 
     public function delete(Request $request, $candidateid) {
         CandidateModel::destroy($candidateid);
-        return redirect('/candidates');
+        return redirect('/candidates')->with('success', 'Candidate deleted successfully');;
     }
 }

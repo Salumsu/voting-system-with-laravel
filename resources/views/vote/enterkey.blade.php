@@ -1,6 +1,8 @@
 @extends('layouts.vote')
 
 @section('content')
+        <a class="btn" href="/"><h1 class="title">Home</h1></a>
+
     <form method="POST" action="/vote/confirm">
         @csrf
         <div class="form-group">

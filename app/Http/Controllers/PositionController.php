@@ -21,7 +21,7 @@ class PositionController extends Controller
         $position = new PositionModel;
         $position->position = $request->input('positionname');
         $position->save();
-        return redirect('/positions');
+        return redirect('/positions')->with('success', 'Position added successfully');
     }
 
     public function updateForm($positionindex) {
@@ -33,11 +33,11 @@ class PositionController extends Controller
         $position = PositionModel::where('positionindex', $request->input('positionindex'))->first();
         $position->position = $request->input('positionname');
         $position->save();
-        return redirect('/positions');
+        return redirect('/positions')->with('success', 'Position updated successfully');
     }
 
     public function delete($positionindex) {
         PositionModel::destroy($positionindex);
-        return redirect('/positions');
+        return redirect('/positions')->with('success', 'Position deleted successfully');
     }
 }
