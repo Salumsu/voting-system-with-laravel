@@ -33,9 +33,9 @@
     <p>Some dependencies for the project need to be installed using composer. <br/>There's also some more things to do to finish this up. These are:  </p>
     <ol>
     <li>Open the terminal then cd to the project folder and then run "composer install"</li>
-    <li>In the same terminal, run php artisan key:generate</li>
     <li>Copy the .env.example found in the root directory of this project and name it ".env"</li>
     <li>Open .env file and change the database name (DB_DATABASE) to vote, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.</li>
+    <li>In the same terminal, run php artisan key:generate</li>
     </ol>
 
 <h2>Use Guide</h2>
