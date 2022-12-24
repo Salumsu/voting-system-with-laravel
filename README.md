@@ -45,6 +45,6 @@
     <li>Go to terminal</li>
     <li>CD to current directory</li>
     <li>Run "php artisan serve"</li>
-    <li>Open your browser and type whatever link is given to you in the terminal most likely "127.0.0.1:8000"</li>
+    <li>Open your browser and type whatever link is given to you in the terminal, which is most likely be "127.0.0.1:8000"</li>
     <li>Have fun!</li>
 </ol>
